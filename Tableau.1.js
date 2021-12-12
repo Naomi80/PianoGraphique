@@ -7,7 +7,9 @@ class Tableau1 extends Phaser.Scene {
         //ground (premier plan noir)
         this.load.image('bubbles', 'Assets/Ground/Bulles/bubbles.png');
         this.load.image('blueBubbles', 'Assets/Ground/Bulles/blue_bubbles.png');
-
+        this.load.image('fishes1', 'Assets/Ground/Petits poissons/fishes_yellow_blue.png');
+        this.load.image('fishes2', 'Assets/Ground/Petits poissons/fishes_yellow_violet.png');
+        this.load.image('ryuboshi', 'Assets/Ground/hommespoissons/ryuboshi.png');
 
 
 
@@ -43,7 +45,12 @@ class Tableau1 extends Phaser.Scene {
             repeat: -1,
             delay: 0,
         });
-
+        this.fishes1 = this.add.image(0, 0, 'fishes1').setOrigin(0, 0);
+        this.fishes1.setScale(0.2)
+        this.fishes2 = this.add.image(100, 0, 'fishes2').setOrigin(0, 0);
+        this.fishes2.setScale(0.2)
+        this.ryuboshi = this.add.image(300, 0, 'ryuboshi').setOrigin(0, 0);
+        this.ryuboshi.setScale(0.2)
 
 
         this.initKeyboard();
