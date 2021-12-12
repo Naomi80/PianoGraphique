@@ -163,11 +163,86 @@ class Tableau1 extends Phaser.Scene {
             delay: 0,
         });
         ///petits poissons
-        this.fishes1 = this.add.image(0, 0, 'fishes1').setOrigin(0, 0);
+        this.fishes1 = this.add.image(-150, 0, 'fishes1').setOrigin(0, 0);
+        this.fishes1.setVisible(false)
         this.fishes1.setScale(0.1)
-        this.fishes2 = this.add.image(100, 0, 'fishes2').setOrigin(0, 0);
-        this.fishes2.setScale(0.1)
+        this.tweens.add({
+            targets: this.fishes1,
+            x: 1000,
+            duration: 8000,
+            ease: 'linear',
+            yoyo: false,
+            flipY: false,
+            repeat: -1,
+            delay: 0,
+        });
+        this.fishes2 = this.add.image(-100, 100, 'fishes2').setOrigin(0, 0);
+        this.fishes2.setVisible(false)
+        this.fishes2.setScale(0.08)
+        this.tweens.add({
+            targets: this.fishes2,
+            x: 900,
+            duration: 6000,
+            ease: 'linear',
+            yoyo: false,
+            flipY: false,
+            repeat: -1,
+            delay: 0,
+        });
+        this.fishes3 = this.add.image(750, 150, 'fishes3').setOrigin(0, 0);
+        this.fishes3.setVisible(false)
+        this.fishes3.setScale(0.2)
+        this.tweens.add({
+            targets: this.fishes3,
+            x: -700,
+            duration: 8000,
+            ease: 'linear',
+            yoyo: false,
+            flipY: false,
+            repeat: -1,
+            delay: 0,
+        });
+        this.fishes4 = this.add.image(850, 175, 'fishes4').setOrigin(0, 0);
+        this.fishes4.setVisible(false)
+        this.fishes4.setScale(0.1)
+        this.tweens.add({
+            targets: this.fishes4,
+            x: -900,
+            duration: 9000,
+            ease: 'linear',
+            yoyo: false,
+            flipY: false,
+            repeat: -1,
+            delay: 0,
+        });
+        this.fishes5 = this.add.image(-150, 440, 'fishes5').setOrigin(0, 0);
+        this.fishes5.setVisible(false)
+        this.fishes5.setScale(0.125)
+        this.tweens.add({
+            targets: this.fishes5,
+            x: 900,
+            duration: 10000,
+            ease: 'linear',
+            yoyo: false,
+            flipY: false,
+            repeat: -1,
+            delay: 0,
+        });
+        this.fishes6 = this.add.image(850, 200, 'fishes6').setOrigin(0, 0);
+        this.fishes6.setVisible(false)
+        this.fishes6.setScale(0.160)
+        this.tweens.add({
+            targets: this.fishes6,
+            x: -900,
+            duration: 7500,
+            ease: 'linear',
+            yoyo: false,
+            flipY: false,
+            repeat: -1,
+            delay: 0,
+        });
         this.ryuboshi = this.add.image(300, 0, 'ryuboshi').setOrigin(0, 0);
+        this.ryuboshi.setVisible(false)
         this.ryuboshi.setScale(0.3)
 
         this.initKeyboard();
@@ -181,7 +256,7 @@ class Tableau1 extends Phaser.Scene {
         this.input.keyboard.on('keyup', function (kevent) {
             switch (kevent.keyCode) {
                 ///bulles
-                // initialisation de la touche en appuie A pour Bubbles
+                // initialisation de la touche en push A pour Bubbles
                 case Phaser.Input.Keyboard.KeyCodes.A:
                     if (me.bubbles.visible == true) {
                         me.bubbles.setVisible(false)
@@ -189,7 +264,7 @@ class Tableau1 extends Phaser.Scene {
                         me.bubbles.setVisible(true)
                     }
                     break
-                // initialisation de la touche en appuie Z pour blueBubbles
+                // initialisation de la touche en push Z pour blueBubbles
                 case Phaser.Input.Keyboard.KeyCodes.Z:
                     if (me.blueBubbles.visible == true) {
                         me.blueBubbles.setVisible(false)
@@ -197,7 +272,7 @@ class Tableau1 extends Phaser.Scene {
                         me.blueBubbles.setVisible(true)
                     }
                     break
-                // initialisation de la touche en appuie E pour Bubbles1
+                // initialisation de la touche en push E pour Bubbles1
                 case Phaser.Input.Keyboard.KeyCodes.E:
                     if (me.bubbles1.visible == true) {
                         me.bubbles1.setVisible(false)
@@ -205,7 +280,7 @@ class Tableau1 extends Phaser.Scene {
                         me.bubbles1.setVisible(true)
                     }
                     break
-                // initialisation de la touche en appuie R pour Bubbles2
+                // initialisation de la touche en push R pour Bubbles2
                 case Phaser.Input.Keyboard.KeyCodes.R:
                     if (me.bubbles2.visible == true) {
                         me.bubbles2.setVisible(false)
@@ -213,7 +288,7 @@ class Tableau1 extends Phaser.Scene {
                         me.bubbles2.setVisible(true)
                     }
                     break
-                // initialisation de la touche en appuie T pour Bubbles3
+                // initialisation de la touche en push T pour Bubbles3
                 case Phaser.Input.Keyboard.KeyCodes.T:
                     if (me.bubbles3.visible == true) {
                         me.bubbles3.setVisible(false)
@@ -221,7 +296,7 @@ class Tableau1 extends Phaser.Scene {
                         me.bubbles3.setVisible(true)
                     }
                     break
-                // initialisation de la touche en appuie Y pour Bubbles4
+                // initialisation de la touche en push Y pour Bubbles4
                 case Phaser.Input.Keyboard.KeyCodes.Y:
                     if (me.bubbles4.visible == true) {
                         me.bubbles4.setVisible(false)
@@ -229,7 +304,7 @@ class Tableau1 extends Phaser.Scene {
                         me.bubbles4.setVisible(true)
                     }
                     break
-                // initialisation de la touche en appuie U pour Bubbles5
+                // initialisation de la touche en push U pour Bubbles5
                 case Phaser.Input.Keyboard.KeyCodes.U:
                     if (me.bubbles5.visible == true) {
                         me.bubbles5.setVisible(false)
@@ -237,7 +312,7 @@ class Tableau1 extends Phaser.Scene {
                         me.bubbles5.setVisible(true)
                     }
                     break
-                // initialisation de la touche en appuie I pour Bubbles6
+                // initialisation de la touche en push I pour Bubbles6
                 case Phaser.Input.Keyboard.KeyCodes.I:
                     if (me.bubbles6.visible == true) {
                         me.bubbles6.setVisible(false)
@@ -245,7 +320,7 @@ class Tableau1 extends Phaser.Scene {
                         me.bubbles6.setVisible(true)
                     }
                     break
-                // initialisation de la touche en appuie O pour Bubbles7
+                // initialisation de la touche en push O pour Bubbles7
                 case Phaser.Input.Keyboard.KeyCodes.O:
                     if (me.bubbles7.visible == true) {
                         me.bubbles7.setVisible(false)
@@ -253,6 +328,57 @@ class Tableau1 extends Phaser.Scene {
                         me.bubbles7.setVisible(true)
                     }
                     break
+                ///Petits poissons
+                // initialisation de la touche en push P pour Fishes1
+                case Phaser.Input.Keyboard.KeyCodes.P:
+                    if (me.fishes1.visible == true) {
+                        me.fishes1.setVisible(false)
+                    } else {
+                        me.fishes1.setVisible(true)
+                    }
+                    break
+                // initialisation de la touche en push Q pour Fishes2
+                case Phaser.Input.Keyboard.KeyCodes.Q:
+                    if (me.fishes2.visible == true) {
+                        me.fishes2.setVisible(false)
+                    } else {
+                        me.fishes2.setVisible(true)
+                    }
+                    break
+                // initialisation de la touche en push S pour Fishes3
+                case Phaser.Input.Keyboard.KeyCodes.S:
+                    if (me.fishes3.visible == true) {
+                        me.fishes3.setVisible(false)
+                    } else {
+                        me.fishes3.setVisible(true)
+                    }
+                    break
+                // initialisation de la touche en push D pour Fishes4
+                case Phaser.Input.Keyboard.KeyCodes.D:
+                    if (me.fishes4.visible == true) {
+                        me.fishes4.setVisible(false)
+                    } else {
+                        me.fishes4.setVisible(true)
+                    }
+                    break
+                // initialisation de la touche en push F pour Fishes5
+                case Phaser.Input.Keyboard.KeyCodes.F:
+                    if (me.fishes5.visible == true) {
+                        me.fishes5.setVisible(false)
+                    } else {
+                        me.fishes5.setVisible(true)
+                    }
+                    break
+                // initialisation de la touche en push G pour Fishes6
+                case Phaser.Input.Keyboard.KeyCodes.G:
+                    if (me.fishes6.visible == true) {
+                        me.fishes6.setVisible(false)
+                    } else {
+                        me.fishes6.setVisible(true)
+                    }
+                    break
+
+
 
             }
         });
