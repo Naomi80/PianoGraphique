@@ -12,7 +12,6 @@ class Tableau1 extends Phaser.Scene {
         this.load.image('ryuboshi', 'Assets/Ground/hommespoissons/ryuboshi.png');
 
 
-
     }
 
     create() {
@@ -51,7 +50,6 @@ class Tableau1 extends Phaser.Scene {
         this.fishes2.setScale(0.2)
         this.ryuboshi = this.add.image(300, 0, 'ryuboshi').setOrigin(0, 0);
         this.ryuboshi.setScale(0.2)
-
 
         this.initKeyboard();
 
