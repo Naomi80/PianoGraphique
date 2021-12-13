@@ -326,17 +326,18 @@ class Tableau1 extends Phaser.Scene {
             repeat: -1,
             delay: 0,
         });
-        this.shirahoshi = this.add.image(-150, 400, 'shirahoshi').setOrigin(0, 0);
+        this.shirahoshi = this.add.image(-150, 200, 'shirahoshi').setOrigin(0, 0);
         this.shirahoshi.setVisible(false)
         this.shirahoshi.setScale(0.135)
         this.shirahoshi.setAlpha(1)
         this.tweens.add({
             targets: this.shirahoshi,
             x: 900,
+            y: 500,
             duration: 6500,
             ease: 'linear',
             yoyo: false,
-            flipY: false,
+            flipX: false,
             repeat: -1,
             delay: 0,
         });
