@@ -1,10 +1,10 @@
 
 class Tableau1 extends Phaser.Scene {
-
+// TODO : Je précharge les images, les assets que je veux faire apparaître
     preload() {
-        //bg (tout au fond et très flou)
+        //background (tout au fond et très flou)
         this.load.image('bg', 'Assets/Background/Fond.png');
-        //ground (premier plan noir)
+        //ground (premier plan avec les assets)
         ///Bulles
         this.load.image('bubbles', 'Assets/Ground/Bulles/bubbles.png');
         this.load.image('blueBubbles', 'Assets/Ground/Bulles/blue_bubbles.png');
@@ -41,13 +41,16 @@ class Tableau1 extends Phaser.Scene {
     }
 
     create() {
+        //TODO : Je crée la fonction pour que mon asset apparaisse
         //background
         let bg = this.add.image(0, 0, 'bg').setOrigin(0, 0);
         //ground
         ///Bulles
         this.bubbles = this.add.image(-10, 500, 'bubbles').setOrigin(0, 0);
+        //TODO : Je dis que mon asset n'est pas visible pour ensuite le faire apparaître lors de l'appui sur la touche lui étant désignée
         this.bubbles.setVisible(false)
         this.bubbles.setScale(0.2)
+        //TODO : je crée une fonction qui me permet de faire bouger mes assets, ici sur l'axe Y
         this.tweens.add({
             targets: this.bubbles,
             y: -400,
@@ -380,13 +383,16 @@ class Tableau1 extends Phaser.Scene {
 
 
     }
-
+    //TODO : Je crée la fonction qui active chacun de mes assets lors de l'appuie sur une touche désignée pour chaque asset
     initKeyboard() {
+        //TODO : je crée un raccourci pour appeler chaque fonction pour mes assets
         let me = this;
+        //TODO : je crée la fonction qui permet de dire que tout ce qui se passe ensuite se passe lorqu'on appuie sur la touche
         this.input.keyboard.on('keyup', function (kevent) {
             switch (kevent.keyCode) {
+                //TODO : initialiser chaque touche en fonction de sa correspondance à son asset
                 ///bulles
-                // initialisation de la touche en push A pour Bubbles
+                // initialisation de la touche appuyée A pour Bubbles
                 case Phaser.Input.Keyboard.KeyCodes.A:
                     if (me.bubbles.visible == true) {
                         me.bubbles.setVisible(false)
@@ -394,7 +400,7 @@ class Tableau1 extends Phaser.Scene {
                         me.bubbles.setVisible(true)
                     }
                     break
-                // initialisation de la touche en push Z pour blueBubbles
+                // initialisation de la touche appuyée Z pour blueBubbles
                 case Phaser.Input.Keyboard.KeyCodes.Z:
                     if (me.blueBubbles.visible == true) {
                         me.blueBubbles.setVisible(false)
@@ -402,7 +408,7 @@ class Tableau1 extends Phaser.Scene {
                         me.blueBubbles.setVisible(true)
                     }
                     break
-                // initialisation de la touche en push E pour Bubbles1
+                // initialisation de la touche appuyée E pour Bubbles1
                 case Phaser.Input.Keyboard.KeyCodes.E:
                     if (me.bubbles1.visible == true) {
                         me.bubbles1.setVisible(false)
@@ -410,7 +416,7 @@ class Tableau1 extends Phaser.Scene {
                         me.bubbles1.setVisible(true)
                     }
                     break
-                // initialisation de la touche en push R pour Bubbles2
+                // initialisation de la touche appuyée R pour Bubbles2
                 case Phaser.Input.Keyboard.KeyCodes.R:
                     if (me.bubbles2.visible == true) {
                         me.bubbles2.setVisible(false)
@@ -418,7 +424,7 @@ class Tableau1 extends Phaser.Scene {
                         me.bubbles2.setVisible(true)
                     }
                     break
-                // initialisation de la touche en push T pour Bubbles3
+                // initialisation de la touche appuyée T pour Bubbles3
                 case Phaser.Input.Keyboard.KeyCodes.T:
                     if (me.bubbles3.visible == true) {
                         me.bubbles3.setVisible(false)
@@ -426,7 +432,7 @@ class Tableau1 extends Phaser.Scene {
                         me.bubbles3.setVisible(true)
                     }
                     break
-                // initialisation de la touche en push Y pour Bubbles4
+                // initialisation de la touche appuyée Y pour Bubbles4
                 case Phaser.Input.Keyboard.KeyCodes.Y:
                     if (me.bubbles4.visible == true) {
                         me.bubbles4.setVisible(false)
@@ -434,7 +440,7 @@ class Tableau1 extends Phaser.Scene {
                         me.bubbles4.setVisible(true)
                     }
                     break
-                // initialisation de la touche en push U pour Bubbles5
+                // initialisation de la touche appuyée U pour Bubbles5
                 case Phaser.Input.Keyboard.KeyCodes.U:
                     if (me.bubbles5.visible == true) {
                         me.bubbles5.setVisible(false)
@@ -442,7 +448,7 @@ class Tableau1 extends Phaser.Scene {
                         me.bubbles5.setVisible(true)
                     }
                     break
-                // initialisation de la touche en push I pour Bubbles6
+                // initialisation de la touche appuyée I pour Bubbles6
                 case Phaser.Input.Keyboard.KeyCodes.I:
                     if (me.bubbles6.visible == true) {
                         me.bubbles6.setVisible(false)
@@ -450,7 +456,7 @@ class Tableau1 extends Phaser.Scene {
                         me.bubbles6.setVisible(true)
                     }
                     break
-                // initialisation de la touche en push O pour Bubbles7
+                // initialisation de la touche appuyée O pour Bubbles7
                 case Phaser.Input.Keyboard.KeyCodes.O:
                     if (me.bubbles7.visible == true) {
                         me.bubbles7.setVisible(false)
@@ -459,7 +465,7 @@ class Tableau1 extends Phaser.Scene {
                     }
                     break
                 ///Petits poissons
-                // initialisation de la touche en push P pour Fishes1
+                // initialisation de la touche appuyée P pour Fishes1
                 case Phaser.Input.Keyboard.KeyCodes.P:
                     if (me.fishes1.visible == true) {
                         me.fishes1.setVisible(false)
@@ -467,7 +473,7 @@ class Tableau1 extends Phaser.Scene {
                         me.fishes1.setVisible(true)
                     }
                     break
-                // initialisation de la touche en push Q pour Fishes2
+                // initialisation de la touche appuyée Q pour Fishes2
                 case Phaser.Input.Keyboard.KeyCodes.Q:
                     if (me.fishes2.visible == true) {
                         me.fishes2.setVisible(false)
@@ -475,7 +481,7 @@ class Tableau1 extends Phaser.Scene {
                         me.fishes2.setVisible(true)
                     }
                     break
-                // initialisation de la touche en push S pour Fishes3
+                // initialisation de la touche appuyée S pour Fishes3
                 case Phaser.Input.Keyboard.KeyCodes.S:
                     if (me.fishes3.visible == true) {
                         me.fishes3.setVisible(false)
@@ -483,7 +489,7 @@ class Tableau1 extends Phaser.Scene {
                         me.fishes3.setVisible(true)
                     }
                     break
-                // initialisation de la touche en push D pour Fishes4
+                // initialisation de la touche appuyée D pour Fishes4
                 case Phaser.Input.Keyboard.KeyCodes.D:
                     if (me.fishes4.visible == true) {
                         me.fishes4.setVisible(false)
@@ -491,7 +497,7 @@ class Tableau1 extends Phaser.Scene {
                         me.fishes4.setVisible(true)
                     }
                     break
-                // initialisation de la touche en push F pour Fishes5
+                // initialisation de la touche appuyée F pour Fishes5
                 case Phaser.Input.Keyboard.KeyCodes.F:
                     if (me.fishes5.visible == true) {
                         me.fishes5.setVisible(false)
@@ -499,7 +505,7 @@ class Tableau1 extends Phaser.Scene {
                         me.fishes5.setVisible(true)
                     }
                     break
-                // initialisation de la touche en push G pour Fishes6
+                // initialisation de la touche appuyée G pour Fishes6
                 case Phaser.Input.Keyboard.KeyCodes.G:
                     if (me.fishes6.visible == true) {
                         me.fishes6.setVisible(false)
@@ -508,7 +514,7 @@ class Tableau1 extends Phaser.Scene {
                     }
                     break
                 ///Gros poissons
-                // initialisation de la touche en push H pour laboon
+                // initialisation de la touche appuyée H pour laboon
                 case Phaser.Input.Keyboard.KeyCodes.H:
                     if (me.laboon.visible == true) {
                         me.laboon.setVisible(false)
@@ -516,7 +522,7 @@ class Tableau1 extends Phaser.Scene {
                         me.laboon.setVisible(true)
                     }
                     break
-                // initialisation de la touche en push J pour megalo
+                // initialisation de la touche appuyée J pour megalo
                 case Phaser.Input.Keyboard.KeyCodes.J:
                     if (me.megalo.visible == true) {
                         me.megalo.setVisible(false)
@@ -524,7 +530,7 @@ class Tableau1 extends Phaser.Scene {
                         me.megalo.setVisible(true)
                     }
                     break
-                // initialisation de la touche en push K pour meuhmeuh
+                // initialisation de la touche appuyée K pour meuhmeuh
                 case Phaser.Input.Keyboard.KeyCodes.K:
                     if (me.meuhmeuh.visible == true) {
                         me.meuhmeuh.setVisible(false)
@@ -532,7 +538,7 @@ class Tableau1 extends Phaser.Scene {
                         me.meuhmeuh.setVisible(true)
                     }
                     break
-                // initialisation de la touche en push L pour seaBoar
+                // initialisation de la touche appuyée L pour seaBoar
                 case Phaser.Input.Keyboard.KeyCodes.L:
                     if (me.seaBoar.visible == true) {
                         me.seaBoar.setVisible(false)
@@ -540,7 +546,7 @@ class Tableau1 extends Phaser.Scene {
                         me.seaBoar.setVisible(true)
                     }
                     break
-                // initialisation de la touche en push M pour seaKing
+                // initialisation de la touche appuyée M pour seaKing
                 case Phaser.Input.Keyboard.KeyCodes.M:
                     if (me.seaKing.visible == true) {
                         me.seaKing.setVisible(false)
@@ -549,7 +555,7 @@ class Tableau1 extends Phaser.Scene {
                     }
                     break
                 ///Hommes poissons
-                // initialisation de la touche en push W pour neptune
+                // initialisation de la touche appuyée W pour neptune
                 case Phaser.Input.Keyboard.KeyCodes.W:
                     if (me.neptune.visible == true) {
                         me.neptune.setVisible(false)
@@ -557,7 +563,7 @@ class Tableau1 extends Phaser.Scene {
                         me.neptune.setVisible(true)
                     }
                     break
-                // initialisation de la touche en push X pour ryuboshi
+                // initialisation de la touche appuyée X pour ryuboshi
                 case Phaser.Input.Keyboard.KeyCodes.X:
                     if (me.ryuboshi.visible == true) {
                         me.ryuboshi.setVisible(false)
@@ -566,7 +572,7 @@ class Tableau1 extends Phaser.Scene {
                     }
                     break
 
-                // initialisation de la touche en push C pour pappug
+                // initialisation de la touche appuyée C pour pappug
                 case Phaser.Input.Keyboard.KeyCodes.C:
                     if (me.pappug.visible == true) {
                         me.pappug.setVisible(false)
@@ -574,7 +580,7 @@ class Tableau1 extends Phaser.Scene {
                         me.pappug.setVisible(true)
                     }
                     break
-                // initialisation de la touche en push V pour shirahoshi
+                // initialisation de la touche appuyée V pour shirahoshi
                 case Phaser.Input.Keyboard.KeyCodes.V:
                     if (me.shirahoshi.visible == true) {
                         me.shirahoshi.setVisible(false)
@@ -582,7 +588,7 @@ class Tableau1 extends Phaser.Scene {
                         me.shirahoshi.setVisible(true)
                     }
                     break
-                // initialisation de la touche en push B pour octy
+                // initialisation de la touche appuyée B pour octy
                 case Phaser.Input.Keyboard.KeyCodes.B:
                     if (me.octy.visible == true) {
                         me.octy.setVisible(false)
@@ -590,7 +596,7 @@ class Tableau1 extends Phaser.Scene {
                         me.octy.setVisible(true)
                     }
                     break
-                // initialisation de la touche en push N pour siren
+                // initialisation de la touche appuyée N pour siren
                 case Phaser.Input.Keyboard.KeyCodes.N:
                     if (me.siren.visible == true) {
                         me.siren.setVisible(false)
